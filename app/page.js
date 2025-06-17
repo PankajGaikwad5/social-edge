@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import Footer from './components/Footer';
 import Temp from '@/components/Temp';
+import Link from 'next/link';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
