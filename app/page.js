@@ -21,27 +21,27 @@ const poppins = Poppins({
   subsets: ['latin'],
 });
 
-const temp = `"[...MM] blends traditional PR tactics with a keen understanding of the digital landscape..."`;
+const temp = `"[...SE] blends traditional PR tactics with a keen understanding of the digital landscape..."`;
 
 const pubs = [
   {
     title: 'Rolling Stone',
-    desc: `"[...MM] blends traditional PR tactics with a keen understanding of the digital landscape..."`,
+    desc: `"[...SE] blends traditional PR tactics with a keen understanding of the digital landscape..."`,
     img: '/pubpngs/1.png',
   },
   {
     title: 'Entrepreneur Stone',
-    desc: `"Maximatic Media ... carved out a significant niche for itself in Wikipedia creation services..."`,
+    desc: `"Social Edge ... carved out a significant niche for itself in Wikipedia creation services..."`,
     img: '/pubpngs/2.png',
   },
   {
     title: 'Digital Journal ',
-    desc: `"[...MM's] solutions... enhance corporate brands in Google's Search Engine Results Pages."`,
+    desc: `"[...SE's] solutions... enhance corporate brands in Google's Search Engine Results Pages."`,
     img: '/pubpngs/3.png',
   },
   {
     title: 'San Francisco Examiner',
-    desc: `"...Maximatic Media are setting standards in safeguarding business integrity in the digital realm."`,
+    desc: `"...Social Edge are setting standards in safeguarding business integrity in the digital realm."`,
     img: '/pubpngs/4.png',
   },
   {
@@ -51,17 +51,17 @@ const pubs = [
   },
   {
     title: 'Yahoo Finance',
-    desc: `"...Maximatic Media aims at setting a new standard in the field of public relations."`,
+    desc: `"...Social Edge aims at setting a new standard in the field of public relations."`,
     img: '/pubpngs/6.png',
   },
   {
     title: 'Grid Daily',
-    desc: `"...[MM] has quickly made a name for itself as a leading hybrid PR and ORM agency."`,
+    desc: `"...[SE] has quickly made a name for itself as a leading hybrid PR and ORM agency."`,
     img: '/pubpngs/7.png',
   },
   {
     title: 'California Business Journal',
-    desc: `"...Maximatic Media's ability... making it a standout performer this year in the PR landscape."`,
+    desc: `"...Social Edge's ability... making it a standout performer this year in the PR landscape."`,
     img: '/pubpngs/8.png',
   },
 ];
