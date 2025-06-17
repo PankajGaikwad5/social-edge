@@ -369,6 +369,152 @@ export default function Home() {
             Contact Us <ArrowRight />
           </Button>
         </div>
+
+        {/* our work why us section */}
+        <div className='w-full flex justify-center items-center bg-white'>
+          <div className='grid md:grid-cols-2 py-20 px-4 sm:px-14 md:px-28 gap-14'>
+            <div className='flex flex-col space-y-8'>
+              <h4 className='text-blue-500/90 sm:text-3xl md:text-[2.5rem] font-semibold tracking-wide'>
+                Our Work
+              </h4>
+              <p className='text-neutral-600'>
+                As a boutique PR agency, our work revolves around helping a
+                small numbers of clients each month materialize their branding
+                goals. We are selective with who we work with and as a result of
+                that, Social Edge has helped dozens of brands, start-ups and
+                individuals to get the digital footprint they need to depict a
+                truly authorative online image. From social media verifications
+                to editorial placements on Entrepreneur and NY Post, we leverage
+                our network and industry expertise to deliver a service that few
+                other agencies can match
+              </p>
+            </div>
+            <div className='flex flex-col space-y-8'>
+              <h4 className='text-blue-500/90 sm:text-3xl md:text-[2.5rem] font-semibold tracking-wide'>
+                Why Us
+              </h4>
+              <p className='text-neutral-600'>
+                {`With the amount of PR and social media professionals out there, it can sometimes be difficult to choose which person or agency to take a risk on. Our unique selling point? 100% guaranteed rendering of services. Many companies may claim that they can successfully execute these services whem, more often than not, they are not always able to deliver. By putting our money where our mouth is, we offer our clients the option to opt for thrid-party escrow facilitation of our transactions. Either we succeed or we don't get paid!`}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* explore section */}
+        <div className='w-full flex flex-col justify-center items-center bg-[#fcf6f0] py-12 space-y-10'>
+          <div className='w-full flex flex-col '>
+            <h4 className='text-lg md:text-4xl font-semibold text-center'>
+              Explore Our Case Studies, Social Media Guides, <br />
+              Branding Tips and Tricks, and more!
+            </h4>
+          </div>
+
+          <div className='grid md:grid-cols-4 max-w-6xl justify-items-center relative w-full px-4 gap-10'>
+            <div className='relative col-span-2 w-full h-[300px] overflow-hidden rounded-xl'>
+              {/* Background Image */}
+              <div className='absolute inset-0 z-0 '>
+                <img
+                  src='/wiki.jpg'
+                  alt='wiki image'
+                  className='w-full h-full object-cover'
+                />
+              </div>
+
+              {/* Black Overlay */}
+              <div className='absolute inset-0 bg-black/60 z-10' />
+
+              {/* Foreground content */}
+              <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
+                <a
+                  href='/'
+                  className='underline text-sm font-semibold text-left   '
+                >
+                  Wikipedia
+                </a>
+                <p className='text-lg md:text-2xl font-semibold '>
+                  How to Create a Wikipedia Page
+                </p>
+              </div>
+            </div>
+            <div className='relative  w-full h-[300px] overflow-hidden rounded-xl'>
+              {/* Background Image */}
+              <div className='absolute inset-0 z-0 '>
+                <img
+                  src='/insta.jpg'
+                  alt='insta image'
+                  className='w-full h-full object-cover'
+                />
+              </div>
+
+              {/* Black Overlay */}
+              <div className='absolute inset-0 bg-black/60 z-10' />
+
+              {/* Foreground content */}
+              <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
+                <a
+                  href='/'
+                  className='underline text-sm font-semibold text-left   '
+                >
+                  Instagram
+                </a>
+                <p className='text-lg md:text-2xl font-semibold '>
+                  Purchasing Rare and Collectible Instagram Usernames
+                </p>
+              </div>
+            </div>
+            <div className='relative  w-full h-[300px] overflow-hidden rounded-xl'>
+              {/* Background Image */}
+              <div className='absolute inset-0 z-0 '>
+                <img
+                  src='/gkp.jpg'
+                  alt='Google Knowledge Panel image'
+                  className='w-full h-full object-cover'
+                />
+              </div>
+
+              {/* Black Overlay */}
+              <div className='absolute inset-0 bg-black/60 z-10' />
+
+              {/* Foreground content */}
+              <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
+                <a
+                  href='/'
+                  className='underline text-sm font-semibold text-left   '
+                >
+                  Google Knowledge Panel
+                </a>
+                <p className='text-lg md:text-2xl font-semibold '>
+                  How to Create a Google Knowledge Panel
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className='relative  w-full h-[270px] max-w-6xl overflow-hidden rounded-xl'>
+            {/* Background Image */}
+            <div className='absolute inset-0 z-0 '>
+              <img
+                src='/ppl.jpg'
+                alt='Google Knowledge Panel image'
+                className='w-full h-full object-cover'
+              />
+            </div>
+
+            {/* Black Overlay */}
+            <div className='absolute inset-0 bg-blue-700/80 z-10' />
+
+            {/* Foreground content */}
+            <div className='relative z-20 flex flex-col justify-center items-center  h-full text-white px-4 gap-5 text-center'>
+              <h5 className='text-xl md:text-4xl tracking-wide font-bold'>
+                Got a question? Give us a shout!
+              </h5>
+              <button className='text-black bg-white hover:bg-white/70 rounded-full px-5 py-3 font-semibold flex justify-center items-center gap-2 transition-all duration-300 cursor-pointer'>
+                Contact Us{' '}
+                <ArrowRight className='bg-black rounded-full text-white' />
+              </button>
+            </div>
+          </div>
+        </div>
       </main>
       {/* <Footer /> */}
     </div>
