@@ -357,6 +357,18 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        {/* blue bg with white text */}
+        <div className='flex flex-col p-4 md:p-14 bg-blue-600 text-white space-y-2.5 md:pl-32'>
+          <h4 className='md:text-4xl font-semibold'>Get in touch with us!</h4>
+          <p className='max-w-lg text-lg font-semibold'>
+            Stop wasting your time on guesswork. Got a question? We are here to
+            help!
+          </p>
+          <Button className='px-14 font-bold py-5 hover:bg-white/70 cursor-pointer bg-white rounded-4xl text-black w-fit mt-5'>
+            Contact Us <ArrowRight />
+          </Button>
+        </div>
       </main>
       {/* <Footer /> */}
     </div>
