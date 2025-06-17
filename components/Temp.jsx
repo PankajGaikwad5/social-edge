@@ -24,7 +24,7 @@ function Temp() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   return (
-    <div className='w-full py-20 bg-[#fcf6f0] flex flex-col space-y-8 px-20 justify-center items-center'>
+    <div className='w-full py-20 bg-[#fcf6f0] flex flex-col space-y-8 px-6 md:px-20 justify-center items-center'>
       <div className=' w-full grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20 max-w-5xl items-center'>
         {/* Floating Image on Left */}
         <div className='order-1 md:order-none flex justify-center'>

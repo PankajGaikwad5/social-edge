@@ -202,43 +202,52 @@ export default function Home() {
         </div>
 
         {/* Section */}
-        <div className='my-14 w-full flex items-center justify-center gap-6 px-4 md:px-14'>
-          {/* Left Blue Line */}
+        <div className='my-14 w-full flex flex-col md:flex-row items-center justify-center gap-6 px-4 md:px-14'>
+          {/* Top Blue Line for mobile (hidden on md and above) */}
+          <div className='block md:hidden w-full h-[2px] bg-blue-500 rounded-full mb-4' />
+
+          {/* Left Blue Line for desktop */}
           <div className='hidden md:block h-[2px] bg-blue-500 flex-1 rounded-full' />
 
           {/* Achievements Images */}
-          <div className='flex items-center gap-6'>
+          <div className='flex flex-col sm:flex-row items-center gap-6 overflow-x-auto'>
             <Image
               src='/ach/1.png'
-              width={280}
-              height={280}
+              width={240}
+              height={240}
               alt='achievements'
+              className='w-[180px] sm:w-[240px] h-auto object-contain'
             />
             <Image
               src='/ach/2.png'
-              width={280}
-              height={280}
+              width={240}
+              height={240}
               alt='achievements'
+              className='w-[180px] sm:w-[240px] h-auto object-contain'
             />
             <Image
               src='/ach/3.png'
-              width={280}
-              height={280}
+              width={240}
+              height={240}
               alt='achievements'
+              className='w-[180px] sm:w-[240px] h-auto object-contain'
             />
           </div>
 
-          {/* Right Blue Line */}
+          {/* Right Blue Line for desktop */}
           <div className='hidden md:block h-[2px] bg-blue-500 flex-1 rounded-full' />
+
+          {/* Bottom Blue Line for mobile (hidden on md and above) */}
+          <div className='block md:hidden w-full h-[2px] bg-blue-500 rounded-full mt-4' />
         </div>
 
         {/* blue section with text and button */}
-        <div className='flex justify-around items-center bg-blue-600 p-8'>
+        <div className='flex flex-col md:flex-row space-y-2 justify-around items-center bg-blue-600 p-8'>
           <h4 className='text-white md:text-2xl md:max-w-lg leading-6'>
             Our networking expertise has opened these doors for us and
             we&apos;re ready to do the same for your brand
           </h4>
-          <Button className='bg-white text-black px-4 py-6 text-lg'>
+          <Button className='bg-white text-black px-4 py-6 font-semibold md:text-lg'>
             Check out our services
           </Button>
         </div>
@@ -410,7 +419,7 @@ export default function Home() {
             </h4>
           </div>
 
-          <div className='grid md:grid-cols-4 max-w-6xl justify-items-center relative w-full px-4 gap-10'>
+          <div className='grid md:grid-cols-4 max-w-6xl justify-items-center relative w-full gap-10'>
             <div className='relative col-span-2 w-full h-[300px] overflow-hidden rounded-xl'>
               {/* Background Image */}
               <div className='absolute inset-0 z-0 '>
