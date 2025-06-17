@@ -1,103 +1,364 @@
-import Image from "next/image";
+'use client';
+import { useRef, useEffect } from 'react';
+import Image from 'next/image';
+import Navbar from './components/Navbar';
+import { Poppins } from 'next/font/google';
+import { Button } from '@/components/ui/button';
+import {
+  ArrowBigDownDashIcon,
+  ArrowRight,
+  Check,
+  ChevronRight,
+  MoveRight,
+  Quote,
+} from 'lucide-react';
+import Footer from './components/Footer';
+import Temp from '@/components/Temp';
+
+const poppins = Poppins({
+  variable: '--font-geist-sans',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin'],
+});
+
+const temp = `"[...MM] blends traditional PR tactics with a keen understanding of the digital landscape..."`;
+
+const pubs = [
+  {
+    title: 'Rolling Stone',
+    desc: `"[...MM] blends traditional PR tactics with a keen understanding of the digital landscape..."`,
+    img: '/pubpngs/1.png',
+  },
+  {
+    title: 'Entrepreneur Stone',
+    desc: `"Maximatic Media ... carved out a significant niche for itself in Wikipedia creation services..."`,
+    img: '/pubpngs/2.png',
+  },
+  {
+    title: 'Digital Journal ',
+    desc: `"[...MM's] solutions... enhance corporate brands in Google's Search Engine Results Pages."`,
+    img: '/pubpngs/3.png',
+  },
+  {
+    title: 'San Francisco Examiner',
+    desc: `"...Maximatic Media are setting standards in safeguarding business integrity in the digital realm."`,
+    img: '/pubpngs/4.png',
+  },
+  {
+    title: `L'Officiel`,
+    desc: `"...this ability to shape and project a strong brand identity is what sets Maximatic Media apart."`,
+    img: '/pubpngs/5.png',
+  },
+  {
+    title: 'Yahoo Finance',
+    desc: `"...Maximatic Media aims at setting a new standard in the field of public relations."`,
+    img: '/pubpngs/6.png',
+  },
+  {
+    title: 'Grid Daily',
+    desc: `"...[MM] has quickly made a name for itself as a leading hybrid PR and ORM agency."`,
+    img: '/pubpngs/7.png',
+  },
+  {
+    title: 'California Business Journal',
+    desc: `"...Maximatic Media's ability... making it a standout performer this year in the PR landscape."`,
+    img: '/pubpngs/8.png',
+  },
+];
+
+const logos = [
+  '/logopngs/1.png',
+  '/logopngs/2.png',
+  '/logopngs/3.png',
+  '/logopngs/4.png',
+  '/logopngs/5.png',
+  '/logopngs/6.png',
+  '/logopngs/7.png',
+  '/logopngs/8.png',
+  '/logopngs/9.png',
+  '/logopngs/10.png',
+  '/logopngs/11.png',
+  '/logopngs/12.png',
+];
+
+const reviews = [
+  {
+    text: `We used Social edge to verify serveral  of our artist's Instagram pages. They are unmatched in this regard`,
+    author: `Dennis K.`,
+  },
+  {
+    text: `(Social Edge) are the real deal. Will certainly be working again with them in future`,
+    author: `Angie S.`,
+  },
+  {
+    text: `I've used (Social Edge's) PR seven times and counting. Huge vouch! They are very well connected.`,
+    author: `Marco L.`,
+  },
+  {
+    text: `Got both my FB and IG verified my Social Edge. After getting scammed once before i was very glad to have found them`,
+    author: `Jared B.`,
+  },
+];
+
+const results = [
+  {
+    title: 'Completely Risk-Free.',
+    text: `Our services are 100% guaranteed. We even offer third-party escrow facilitation. Either we succeed or you won't pay a cent!`,
+  },
+  {
+    title: 'Top-Notch Support.',
+    text: `Our dedicated managers will be there every step of the way to help you achieve your media objectives.`,
+  },
+  {
+    title: 'Customized for you.',
+    text: `Whether you're an artist, a public figure, an entrepreneur, or a brand - we will ensure that you receive the highest level of branding.`,
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div>
+      <header>
+        <Navbar />
+      </header>
+      <main className={`m-auto  w-full text-[#323232] ${poppins.className}`}>
+        {/* Hero Content */}
+        <div className='flex flex-col w-full px-8 md:px-32 py-10 md:pb-20 pt-[5rem] md:pt-[8rem] bg-[#fcf6f0]'>
+          <div className='flex flex-col gap-5 items-start'>
+            <h1 className='text-xl md:text-6xl font-semibold max-w-full md:max-w-[54rem]'>
+              Enhance Your PR and Online Reputation Management the Maximatic
+              Way!
+            </h1>
+            <p className='text-xl md:max-w-[60rem] text-zinc-600'>
+              Claim unavailable usernames, delete negative reviews and content,
+              get seen in international news outlets and maximize your overall
+              media presence with the help of Maximatic Media!
+            </p>
+            <Button className='bg-gradient-to-b from-[#3e3d79] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
+              Explore Our Services{' '}
+              <span>
+                {' '}
+                <ArrowRight className='bg-white text-black rounded-full' />
+              </span>
+            </Button>
+          </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          {/* Collabs Logos */}
+          <div className='grid  grid-cols-2 md:grid-cols-6 gap-14 my-10 items-center'>
+            {logos.map((img, index) => {
+              return (
+                <Image
+                  src={img}
+                  width={200}
+                  height={200}
+                  alt='logos'
+                  key={index}
+                />
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Features */}
+        <div className='w-full flex justify-center items-center py-8'>
+          <div className='w-full md:max-w-5xl flex flex-col gap-10 px-4'>
+            <div className='w-full flex flex-col justify-center items-center text-base md:text-3xl my-8 font-bold'>
+              <h2 className='text-black tracking-wide'>
+                We've been featured in some of the
+              </h2>
+              <h2 className='text-blue-600 tracking-wider'>
+                world's most renowed publications
+              </h2>
+            </div>
+
+            <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
+              {pubs.map((item, index) => (
+                <div
+                  key={index}
+                  className='flex flex-col items-center justify-between h-full bg-[#fcf6f0] rounded-sm p-6 border border-transparent hover:border-black transition-all duration-300 transform ease-in-out'
+                >
+                  <div className='flex justify-center items-center h-[100px] w-full border-b-2 border-zinc-500 mb-4'>
+                    <Image
+                      src={item.img}
+                      alt='publication logo'
+                      width={80}
+                      height={80}
+                      className='object-contain'
+                    />
+                  </div>
+                  <h4 className='text-lg font-semibold text-center text-black mb-2'>
+                    {item.title}
+                  </h4>
+                  <p className='text-sm text-zinc-700 italic text-center'>
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/*  */}
+          </div>
+        </div>
+
+        {/* Section */}
+        <div className='my-14 w-full flex items-center justify-center gap-6 px-4 md:px-14'>
+          {/* Left Blue Line */}
+          <div className='hidden md:block h-[2px] bg-blue-500 flex-1 rounded-full' />
+
+          {/* Achievements Images */}
+          <div className='flex items-center gap-6'>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src='/ach/1.png'
+              width={280}
+              height={280}
+              alt='achievements'
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <Image
+              src='/ach/2.png'
+              width={280}
+              height={280}
+              alt='achievements'
+            />
+            <Image
+              src='/ach/3.png'
+              width={280}
+              height={280}
+              alt='achievements'
+            />
+          </div>
+
+          {/* Right Blue Line */}
+          <div className='hidden md:block h-[2px] bg-blue-500 flex-1 rounded-full' />
+        </div>
+
+        {/* blue section with text and button */}
+        <div className='flex justify-around items-center bg-blue-600 p-8'>
+          <h4 className='text-white md:text-2xl md:max-w-lg leading-6'>
+            Our networking expertise has opened these doors for us and we're
+            ready to do the same for your brand
+          </h4>
+          <Button className='bg-white text-black px-4 py-6 text-lg'>
+            Check out our services
+          </Button>
+        </div>
+
+        {/* section to be edited */}
+        {/* Section Styled Like Image */}
+        <Temp />
+
+        {/* clients served */}
+        <div className='w-full flex justify-center items-center flex-col py-20'>
+          <div className='flex flex-col text-center'>
+            <h4 className='md:text-[2.5rem] font-semibold'>
+              Over 450 Clients Served
+            </h4>
+            <p className='text-zinc-700 '>
+              Guaranteed results are why our clients love us. Check out what our
+              clients have to say about Maximatic Media.
+            </p>
+          </div>
+
+          <div className='max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-6 px-4  py-8'>
+            {reviews.map((item, index) => (
+              <div
+                key={index}
+                className='flex flex-col justify-between h-full p-3 rounded-lg bg-white'
+              >
+                <div className='flex mb-4'>
+                  <Quote className='text-blue-700' size={40} />
+                </div>
+
+                <div className='flex flex-col space-y-2 flex-1'>
+                  <p className='text-zinc-800 font-semibold text-sm'>
+                    {item.text}
+                  </p>
+                  <p className='text-neutral-500 font-semibold'>
+                    {item.author}
+                  </p>
+                </div>
+
+                <div className='mt-4'>
+                  <Image
+                    src='/stars.png'
+                    width={120}
+                    height={24}
+                    alt='stars'
+                    className='object-contain'
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className='w-full bg-[#fcf6f0] py-8'>
+            <div className='max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-6 px-4  py-8'>
+              <div className='flex justify-center items-center'>
+                <h4 className='text-center md:text-4xl font-semibold leading-8'>
+                  Guarantee
+                  <br />d Results
+                </h4>
+              </div>
+              {results.map((item, index) => {
+                return (
+                  <div className='flex flex-col space-y-8' key={index}>
+                    <Check
+                      size={30}
+                      className='bg-blue-600 text-white rounded-sm'
+                    />
+                    <p className=' leading-5 text-neutral-500'>
+                      <span className=' font-bold'>{item.title}</span>
+                      {item.text}
+                    </p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className='grid md:grid-cols-2 py-20 px-4 md:px-28 gap-14'>
+            <div className='flex flex-col space-y-8'>
+              <h4 className='text-blue-800 md:text-[2.5rem] font-semibold tracking-wide'>
+                Who We Are
+              </h4>
+              <p className='text-neutral-600'>
+                We are a boutique PR and Online Reputation Management Agency
+                that helps individuals and brands alike to be who they want to
+                be in the digital landscape. We make our mark by assisting our
+                clients and social media. Check out our {`"About Us`} page to
+                learn more about our story
+              </p>
+
+              <Button className='bg-transparent text-black font-semibold hover:bg-neutral-100/50 px-6 py-5 transition-all duration-300 border-black hover:border-0 border-2 w-fit cursor-pointer rounded-3xl'>
+                About Us
+                {/* <span className=''>
+                  <ChevronRight />
+                </span> */}
+              </Button>
+            </div>
+            <div className='flex flex-col space-y-8'>
+              <h4 className='text-blue-800 md:text-[2.5rem] font-semibold tracking-wide'>
+                What We Do
+              </h4>
+              <p className='text-neutral-600'>
+                From helping up-and-coming companies claim their official
+                usernames on social platforms to obtaining PR placements for an
+                aspiring artist in time for their next EP – our services are
+                designed to help our clients succeed and grow! We are devoted to
+                our work and devoted to writing about it too, so make sure to
+                check out our blog!
+              </p>
+
+              <Button className='bg-transparent text-black font-semibold hover:bg-neutral-100/50 px-6 py-5 transition-all duration-300 border-black hover:border-0 border-2 w-fit cursor-pointer rounded-3xl'>
+                Blog
+                {/* <span className=''>
+                  <ChevronRight />
+                </span> */}
+              </Button>
+            </div>
+          </div>
         </div>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      {/* <Footer /> */}
     </div>
   );
 }
