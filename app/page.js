@@ -425,12 +425,12 @@ export default function Home() {
 
               {/* Foreground content */}
               <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
-                <a
+                <Link
                   href='/'
                   className='underline text-sm font-semibold text-left   '
                 >
                   Wikipedia
-                </a>
+                </Link>
                 <p className='text-lg md:text-2xl font-semibold '>
                   How to Create a Wikipedia Page
                 </p>
@@ -451,12 +451,12 @@ export default function Home() {
 
               {/* Foreground content */}
               <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
-                <a
+                <Link
                   href='/'
                   className='underline text-sm font-semibold text-left   '
                 >
                   Instagram
-                </a>
+                </Link>
                 <p className='text-lg md:text-2xl font-semibold '>
                   Purchasing Rare and Collectible Instagram Usernames
                 </p>
@@ -477,12 +477,12 @@ export default function Home() {
 
               {/* Foreground content */}
               <div className='relative z-20 flex flex-col justify-end pb-10 pl-8 h-full text-white px-4 gap-2.5'>
-                <a
+                <Link
                   href='/'
                   className='underline text-sm font-semibold text-left   '
                 >
                   Google Knowledge Panel
-                </a>
+                </Link>
                 <p className='text-lg md:text-2xl font-semibold '>
                   How to Create a Google Knowledge Panel
                 </p>
