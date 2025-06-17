@@ -164,10 +164,10 @@ export default function Home() {
           <div className='w-full md:max-w-5xl flex flex-col gap-10 px-4'>
             <div className='w-full flex flex-col justify-center items-center text-base md:text-3xl my-8 font-bold'>
               <h2 className='text-black tracking-wide'>
-                We've been featured in some of the
+                We&apos;ve been featured in some of the
               </h2>
               <h2 className='text-blue-600 tracking-wider'>
-                world's most renowed publications
+                world&apos;s most renowed publications
               </h2>
             </div>
 
@@ -234,8 +234,8 @@ export default function Home() {
         {/* blue section with text and button */}
         <div className='flex justify-around items-center bg-blue-600 p-8'>
           <h4 className='text-white md:text-2xl md:max-w-lg leading-6'>
-            Our networking expertise has opened these doors for us and we're
-            ready to do the same for your brand
+            Our networking expertise has opened these doors for us and
+            we&apos;re ready to do the same for your brand
           </h4>
           <Button className='bg-white text-black px-4 py-6 text-lg'>
             Check out our services
