@@ -25,7 +25,7 @@ const menuData = [
   {
     title: 'Claim Taken Usernames',
     links: [
-      { label: 'Instagram Username Claim', href: '#' },
+      { label: 'Instagram Username Claim', href: '/usernames' },
       { label: 'Facebook Username Claim', href: '#' },
       { label: 'Twitter Username Claim', href: '#' },
       { label: 'TikTok Username Claim', href: '#' },

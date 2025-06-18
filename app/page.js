@@ -118,9 +118,9 @@ const results = [
 
 export default function Home() {
   return (
-    <div>
+    <main>
       {/* <header><Navbar /></header> */}
-      <main className={`m-auto  w-full text-[#323232] ${poppins.className}`}>
+      <div className={`m-auto  w-full text-[#323232] ${poppins.className}`}>
         {/* Hero Content */}
         <div className='flex flex-col w-full px-8 md:px-32 py-10 md:pb-20 pt-[5rem] md:pt-[8rem] bg-[#fcf6f0]'>
           <div className='flex flex-col gap-5 items-start'>
@@ -523,8 +523,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </main>
+      </div>
       {/* <Footer /> */}
-    </div>
+    </main>
   );
 }
