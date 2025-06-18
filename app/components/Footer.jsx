@@ -27,9 +27,9 @@ function Footer() {
                 className='scale-50 -ml-20'
               />
             </div>
-            <div className='w-full flex justify-start max-w-[10rem] -mt-5'>
+            <div className='w-full flex justify-start max-w-[10rem] -mt-5 -ml-5'>
               <img
-                src='https://maximaticmedia.com/wp-content/uploads/2022/12/1200px-Escrow_com_logo-1.png'
+                src='https://maximaticmedia.com/wp-content/uploads/2022/12/1200px-Escrow_com_logo-1-980x311.png'
                 alt=''
                 className=''
               />
