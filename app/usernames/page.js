@@ -32,7 +32,7 @@ function page() {
       <div className='w-full flex flex-col justify-center items-center'>
         {/* first section */}
         <div className='w-full flex justify-center items-center bg-[#fdf6f0] pt-20 p-10 '>
-          <div className='w-full flex max-w-[59rem] items-center'>
+          <div className='w-full flex flex-col md:flex-row max-w-[59rem] items-center'>
             <div className='flex flex-col space-y-3 text-black/80'>
               <h1 className='text-lg font-semibold md:text-5xl'>
                 Instagram Username Claim Service
@@ -53,7 +53,7 @@ function page() {
         </div>
 
         {/* second section */}
-        <div className='w-full bg-white max-w-[59rem] py-16 flex space-x-1 items-start'>
+        <div className='w-full bg-white max-w-[59rem] py-16 flex flex-col md:flex-row px-4 md:px-0 space-x-5 items-start'>
           <div className='flex flex-col'>
             <p className='text-zinc-500 mb-4'>Rated Excellent 93 Reviews</p>
             <img
@@ -68,7 +68,7 @@ function page() {
         </div>
 
         {/* third section */}
-        <div className='w-full bg-[#f7f7f7] py-16 flex justify-center items-center'>
+        <div className='w-full bg-[#f7f7f7] py-16 flex justify-center items-center px-4 md:px-0'>
           <div className='max-w-[59rem]'>
             <AnimatedSection
               img={'/username.png'}
