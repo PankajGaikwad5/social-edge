@@ -144,9 +144,17 @@ function page() {
         {/* Fifth section */}
         <div className='w-full flex justify-center items-center bg-[#f7f7f7] py-16'>
           <div className='max-w-[59rem]'>
-            <h4 className='text-xl md:text-4xl  font-semibold  text-cyan-500'>
-              PRICING
-            </h4>
+            <div className='text-center space-y-2'>
+              <h4
+                className={`text-xl md:text-4xl  font-semibold  text-cyan-500`}
+              >
+                PRICING
+              </h4>
+              <p className='text-zinc-600/90 font-semibold tracking-wide'>
+                Our Instagram username claim services are backed by a 100%
+                refund gurantee in the event of failure.
+              </p>
+            </div>
           </div>
         </div>
 

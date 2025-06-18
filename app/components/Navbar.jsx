@@ -106,12 +106,15 @@ export default function Navbar() {
         scrolled ? 'bg-white shadow-md' : ''
       } ${poppins.className}`}
     >
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex h-16 items-center justify-between'>
-        <Link href='/' className='text-xl font-bold uppercase text-zinc-800'>
+      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 flex h-16 items-center justify-between'>
+        <Link
+          href='/'
+          className='text-xl font-bold uppercase text-zinc-800 text-nowrap'
+        >
           SoCiAl EdGe
         </Link>
 
-        <div className='hidden md:flex items-center space-x-6'>
+        <div className='hidden md:flex items-center space-x-2'>
           <NavigationMenu viewport={false} className='flex'>
             <NavigationMenuList>
               {menuData.map((group) => (
@@ -122,7 +125,7 @@ export default function Navbar() {
                   <NavigationMenuContent>
                     {/* Apply max-height and scrolling for PR Services */}
                     <ul
-                      className={`grid w-[260px] gap-2 p-4 border-t-4 border-blue-400 ${
+                      className={`grid w-[260px]  py-4 border-t-4 border-blue-400 ${
                         group.title === 'PR Services'
                           ? 'max-h-96 overflow-y-auto'
                           : ''
