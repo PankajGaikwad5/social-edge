@@ -35,6 +35,7 @@ export default function Temp() {
     {
       imageOnLeft: true,
       title: 'PR Services',
+      img: '/prservices2.png',
       headline:
         'Get seen on the most reputable and authoritative publications in the world!',
       description:
@@ -45,6 +46,7 @@ export default function Temp() {
     {
       imageOnLeft: false, // Reversed layout
       title: 'Social Media Growth',
+      img: '/orm.png',
       headline:
         'Boost your online presence across all major platforms with authentic audience growth.',
       description:
@@ -71,7 +73,7 @@ export default function Temp() {
                 className='absolute top-6 left-9 w-full h-full pointer-events-none will-change-transform'
               >
                 <Image
-                  src='/prservices2.png'
+                  src={section.img}
                   alt='Floating'
                   width={400}
                   height={400}

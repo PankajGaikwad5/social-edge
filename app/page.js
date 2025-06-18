@@ -119,9 +119,7 @@ const results = [
 export default function Home() {
   return (
     <div>
-      <header>
-        <Navbar />
-      </header>
+      {/* <header><Navbar /></header> */}
       <main className={`m-auto  w-full text-[#323232] ${poppins.className}`}>
         {/* Hero Content */}
         <div className='flex flex-col w-full px-8 md:px-32 py-10 md:pb-20 pt-[5rem] md:pt-[8rem] bg-[#fcf6f0]'>
@@ -526,7 +524,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
