@@ -361,7 +361,7 @@ function page() {
                 Frequently Asked Questions
               </h4>
               <p className=' text-sm font-medium text-neutral-500'>
-                Didn't find your question?
+                {`Didn't find your question?`}
               </p>
               <Link href='/' className=' text-sm font-semibold text-blue-500'>
                 Contact Us
