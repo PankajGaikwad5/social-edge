@@ -6,6 +6,8 @@ import { ClipboardList, List, Star, ArrowRight } from 'lucide-react';
 import { FaStar } from 'react-icons/fa';
 import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import AccordionSection from '@/components/Accordion';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
@@ -87,7 +89,9 @@ function page() {
         {/* second section */}
         <div className='w-full bg-white max-w-[59rem] py-16 flex flex-col md:flex-row px-4 md:px-0 space-x-5 items-start'>
           <div className='flex flex-col'>
-            <p className='text-zinc-500 mb-4'>Rated Excellent 93 Reviews</p>
+            <p className='text-zinc-500 mb-4 font-medium'>
+              Rated Excellent 93 Reviews
+            </p>
             <img
               src='https://maximaticmedia.com/wp-content/uploads/2022/11/stars.png'
               alt=''
@@ -95,7 +99,7 @@ function page() {
           </div>
           <div className='flex flex-col max-w-2xl'>
             <h2 className='text-2xl font-semibold leading-7'>{`"Didn't know this service even existed until i was referred to Social Edge. Will certainly be working with them again on my next projects"`}</h2>
-            <p className='text-zinc-600 leading-5'>Thomas P.</p>
+            <p className='text-zinc-600 leading-5 font-medium'>Thomas P.</p>
           </div>
         </div>
 
@@ -118,7 +122,7 @@ function page() {
             <h3 className='text-blue-700/80 font-semibold text-lg md:text-[2.5rem]'>
               How it Works
             </h3>
-            <p className='text-zinc-700 tracking-wide'>
+            <p className='text-zinc-700 font-medium tracking-wide'>
               Our process behind claiming Instagram Usernames is simple and
               easy!
             </p>
@@ -137,7 +141,7 @@ function page() {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Pre Qualification
                 </h4>
-                <p className='text-zinc-600/80 font-semibold leading-6'>{`The username in question must be atleast six 6 characters long and not be a highly searched-for term. It must also not be generic i.e. "Money" or "Damiel"`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`The username in question must be atleast six 6 characters long and not be a highly searched-for term. It must also not be generic i.e. "Money" or "Damiel"`}</p>
               </div>
             </div>
             <div className='flex flex-col space-y-5'>
@@ -152,7 +156,7 @@ function page() {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Submission
                 </h4>
-                <p className='text-zinc-600/80 font-semibold leading-6'>{`If we've agreed to take on your case, we will submit a request for the username claim directly to our Media Partner representative at Meta and await their approval`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`If we've agreed to take on your case, we will submit a request for the username claim directly to our Media Partner representative at Meta and await their approval`}</p>
               </div>
             </div>
             <div className='flex flex-col space-y-5'>
@@ -167,7 +171,7 @@ function page() {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Result
                 </h4>
-                <p className='text-zinc-600/80 font-semibold leading-6'>{`Following our submission, our internal Instagram rep will swap your current username with the handle you're seeking to claim and voila - say hello to your new username!`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`Following our submission, our internal Instagram rep will swap your current username with the handle you're seeking to claim and voila - say hello to your new username!`}</p>
               </div>
             </div>
           </div>
@@ -336,14 +340,61 @@ function page() {
                       className='bg-blue-600 text-white rounded-full p-1'
                     />
                     <p className=' leading-5 text-neutral-500'>
-                      <span className=' font-bold'>{item.title}</span>
+                      <span className=' font-bold '>{item.title}</span>
 
-                      <span className='text-neutral-600'>{item.text}</span>
+                      <span className='text-neutral-600/90 font-medium'>
+                        {item.text}
+                      </span>
                     </p>
                   </div>
                 );
               })}
             </div>
+          </div>
+        </div>
+
+        {/* Accordion section */}
+        <div className='w-full bg-[#f7f7f7] py-20 flex justify-center items-center'>
+          <div className='max-w-7xl flex flex-col md:flex-row gap-4 md:space-x-14'>
+            <div className='flex flex-col space-y-4 font-medium md:max-w-[11rem]'>
+              <h4 className=' md:text-[2.5rem] font-semibold leading-10'>
+                Frequently Asked Questions
+              </h4>
+              <p className=' text-sm font-medium text-neutral-500'>
+                Didn't find your question?
+              </p>
+              <Link href='/' className=' text-sm font-semibold text-blue-500'>
+                Contact Us
+              </Link>
+            </div>
+            <div className=''>
+              <AccordionSection />
+            </div>
+          </div>
+        </div>
+
+        <div className='relative  w-full h-[270px] max-w-5xl overflow-hidden rounded-xl mb-20 bg-[#f7f7f7]'>
+          {/* Background Image */}
+          <div className='absolute inset-0 z-0 '>
+            <img
+              src='/usernamelast.png'
+              alt='Google Knowledge Panel image'
+              className='w-full h-full object-cover'
+            />
+          </div>
+
+          {/* Black Overlay */}
+          <div className='absolute inset-0 bg-blue-700/80 z-10' />
+
+          {/* Foreground content */}
+          <div className='relative z-20 flex flex-col justify-center items-center  h-full text-white px-4 gap-5 text-center'>
+            <h5 className='text-xl md:text-4xl tracking-wide font-bold'>
+              Got a question? Give us a shout!
+            </h5>
+            <button className='text-black bg-white hover:bg-white/70 rounded-full px-5 py-3 font-semibold flex justify-center items-center gap-2 transition-all duration-300 cursor-pointer'>
+              Contact Us{' '}
+              <ArrowRight className='bg-black rounded-full text-white' />
+            </button>
           </div>
         </div>
       </div>
