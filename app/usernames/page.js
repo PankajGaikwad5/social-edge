@@ -2,9 +2,10 @@ import React from 'react';
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
-import { ClipboardList, List, Star } from 'lucide-react';
+import { ClipboardList, List, Star, ArrowRight } from 'lucide-react';
 import { FaStar } from 'react-icons/fa';
 import { Check } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
@@ -27,6 +28,37 @@ function page() {
       text: `Our dedicated case managers will answer any queries within 24H!`,
     },
   ];
+
+  const cardData = [
+    {
+      title: 'Basic Username Claims',
+      features: [
+        'Claim a non-generic, branded username',
+        'Must be at least six characters in length',
+        'Delivered within 3 – 7 business days',
+      ],
+      price: '$3,499',
+    },
+    {
+      title: 'Verified Username Change Service',
+      features: [
+        'Rename your verified Instagram page whilst retaining your badge',
+        'The new username must be available',
+        'Delivered within 3 – 7 business days',
+      ],
+      price: '$4,399',
+    },
+    {
+      title: 'Rare and Generic Usernames',
+      features: [
+        'Claim just about any short or generic username',
+        'Username must be inactive',
+        'Delivered within 3 – 45 business days',
+      ],
+      price: 'Starting at $12,999',
+    },
+  ];
+
   return (
     <main className={`w-full ${poppins.className}`}>
       <div className='w-full flex flex-col justify-center items-center'>
@@ -141,9 +173,9 @@ function page() {
           </div>
         </div>
 
-        {/* Fifth section */}
-        <div className='w-full flex justify-center items-center bg-[#f7f7f7] py-16'>
-          <div className='max-w-[59rem]'>
+        {/* Fifth Pricing section */}
+        <div className='w-full flex justify-center items-center bg-[#f7f7f7] py-20'>
+          <div className='max-w-7xl flex flex-col justify-center items-center '>
             <div className='text-center space-y-2'>
               <h4
                 className={`text-xl md:text-4xl  font-semibold  text-cyan-500`}
@@ -154,6 +186,135 @@ function page() {
                 Our Instagram username claim services are backed by a 100%
                 refund gurantee in the event of failure.
               </p>
+            </div>
+            {/* cards */}
+            <div className='grid md:grid-cols-3 mt-8 gap-10 px-4'>
+              {cardData.map((data, index) => {
+                return (
+                  <div
+                    className='bg-white shadow-2xl flex flex-col justify-center items-center space-y-2.5 p-8  rounded-3xl  w-[340px]  border border-gray-200 drop-shadow-xl'
+                    key={index}
+                  >
+                    <h4 className='text-lg md:text-2xl font-semibold text-center'>
+                      {data.title}
+                    </h4>
+                    <ul className='flex-col '>
+                      {data.features.map((item, i) => {
+                        return (
+                          <li className='flex gap-2 items-start  ' key={i}>
+                            <Check
+                              className='text-blue-700/80'
+                              strokeWidth={4}
+                              size={50}
+                            />
+                            {item}
+                          </li>
+                        );
+                      })}
+                    </ul>
+
+                    <h4 className='text-lg md:text-2xl font-semibold'>
+                      {data.price}
+                    </h4>
+                    <Button className='bg-gradient-to-b from-[#583f80] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
+                      Check Eligibility for Free{' '}
+                      <span>
+                        {' '}
+                        <ArrowRight className='bg-white text-blue-700 rounded-full' />
+                      </span>
+                    </Button>
+                    <p className=' text-sm font-semibold text-neutral-500'>
+                      No payment required
+                    </p>
+                  </div>
+                );
+              })}
+              {/* <div className='bg-white shadow-2xl flex flex-col justify-center items-center space-y-6 p-8 border rounded-3xl  w-[340px]'>
+                <h4 className='text-lg md:text-2xl font-semibold text-center'>
+                  Basic Username Claims
+                </h4>
+                <ul className='flex-col '>
+                  <li className='flex gap-2 items-start  '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Claim a non-generic, branded username
+                  </li>
+                  <li className='flex gap-2 items-start  '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Must be atleast six characters in length
+                  </li>
+                  <li className='flex gap-2 items-start  '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Delivered within 3 - 7 business days
+                  </li>
+                </ul>
+
+                <h4 className='text-lg md:text-2xl font-semibold'>$3,499</h4>
+                <Button className='bg-gradient-to-b from-[#583f80] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
+                  Check Eligibility for Free{' '}
+                  <span>
+                    {' '}
+                    <ArrowRight className='bg-white text-blue-700 rounded-full' />
+                  </span>
+                </Button>
+                <p className=' text-sm font-semibold text-neutral-500'>
+                  No payment required
+                </p>
+              </div>
+              <div className='bg-white shadow-2xl flex flex-col justify-center items-center space-y-6 p-8 border rounded-3xl  w-[340px]'>
+                <h4 className='text-lg md:text-2xl font-semibold text-center'>
+                  Basic Username Claims
+                </h4>
+                <ul className='flex-col '>
+                  <li className='flex gap-2 items-start font-semibold '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Claim a non-generic, branded username
+                  </li>
+                  <li className='flex gap-2 items-start font-semibold '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Must be atleast six characters in length
+                  </li>
+                  <li className='flex gap-2 items-start font-semibold '>
+                    <Check
+                      className='text-blue-700/80'
+                      strokeWidth={4}
+                      size={50}
+                    />
+                    Delivered within 3 - 7 business days
+                  </li>
+                </ul>
+
+                <h4 className='text-lg md:text-2xl font-semibold'>$3,499</h4>
+                <Button className='bg-gradient-to-b from-[#583f80] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
+                  Check Eligibility for Free{' '}
+                  <span>
+                    {' '}
+                    <ArrowRight className='bg-white text-blue-700 rounded-full' />
+                  </span>
+                </Button>
+                <p className=' text-sm font-semibold text-neutral-500'>
+                  No payment required
+                </p>
+              </div> */}
             </div>
           </div>
         </div>
