@@ -6,7 +6,7 @@ import { MoveRight } from 'lucide-react';
 export default function AnimatedSection({
   imageOnLeft = true,
   img,
-  bg,
+  // bg,
   title,
   headline,
   description,
@@ -39,7 +39,7 @@ export default function AnimatedSection({
     <div className='flex justify-center'>
       <div className='relative w-[90%] md:w-[360px] aspect-[4/3]'>
         <Image
-          src={bg}
+          src={'/prservices1.jpg'}
           alt='Background'
           width={400}
           height={400}

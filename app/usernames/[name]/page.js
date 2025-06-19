@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import AnimatedSection from '@/components/AnimatedSection';
@@ -8,6 +9,12 @@ import { Check } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import AccordionSection from '@/components/Accordion';
+import {
+  fbData,
+  InstaData,
+  tiktokData,
+  twitterData,
+} from '@/components/cardData';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
@@ -16,7 +23,29 @@ const poppins = Poppins({
 });
 
 function page({ params }) {
-  const { name } = params;
+  const { name } = React.use(params);
+
+  const [hoverImg, setHoverImg] = useState('/username.png');
+  const [cardData, setCardData] = useState(InstaData);
+
+  useEffect(() => {
+    if (name === 'Instagram') {
+      setHoverImg('/username.png');
+      setCardData(InstaData);
+    }
+    if (name === 'Facebook') {
+      setHoverImg('/fb.png');
+      setCardData(fbData);
+    }
+    if (name === 'Twitter') {
+      setHoverImg('/tw.png');
+      setCardData(twitterData);
+    }
+    if (name === 'TikTok') {
+      setHoverImg('/tt.png');
+      setCardData(tiktokData);
+    }
+  }, []);
 
   console.log(name);
   const results = [
@@ -31,36 +60,6 @@ function page({ params }) {
     {
       title: 'World-Class Support.',
       text: `Our dedicated case managers will answer any queries within 24H!`,
-    },
-  ];
-
-  const cardData = [
-    {
-      title: 'Basic Username Claims',
-      features: [
-        'Claim a non-generic, branded username',
-        'Must be at least six characters in length',
-        'Delivered within 3 – 7 business days',
-      ],
-      price: '$3,499',
-    },
-    {
-      title: 'Verified Username Change Service',
-      features: [
-        'Rename your verified Instagram page whilst retaining your badge',
-        'The new username must be available',
-        'Delivered within 3 – 7 business days',
-      ],
-      price: '$4,399',
-    },
-    {
-      title: 'Rare and Generic Usernames',
-      features: [
-        'Claim just about any short or generic username',
-        'Username must be inactive',
-        'Delivered within 3 – 45 business days',
-      ],
-      price: 'Starting at $12,999',
     },
   ];
 
@@ -110,8 +109,7 @@ function page({ params }) {
         <div className='w-full bg-[#f7f7f7] py-16 flex justify-center items-center px-4 md:px-0'>
           <div className='max-w-[59rem]'>
             <AnimatedSection
-              img={'/username.png'}
-              bg={'/prservices1.jpg'}
+              img={hoverImg}
               title={`Claim Your Ideal ${name} Username!`}
               headline={`${name} Usernames Claims`}
               description={`Got an ${name} username that perfectly fits your personal brand or business but it's been taken by some old, inactive account? Unable to find any usernames that match your domain and site identity? If so, we can help you become the new owner of said username! Claim inactive ${name} usernames with ease using our lightning-fast ${name} username claim service`}
@@ -173,7 +171,7 @@ function page({ params }) {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Result
                 </h4>
-                <p className='text-zinc-600 font-medium leading-6'>{`Following our submission, our internal Instagram rep will swap your current username with the handle you're seeking to claim and voila - say hello to your new username!`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`Following our submission, our internal ${name} rep will swap your current username with the handle you're seeking to claim and voila - say hello to your new username!`}</p>
               </div>
             </div>
           </div>
@@ -194,47 +192,47 @@ function page({ params }) {
               </p>
             </div>
             {/* cards */}
-            <div className='grid md:grid-cols-3 mt-8 gap-10 px-4'>
-              {cardData.map((data, index) => {
-                return (
-                  <div
-                    className='bg-white shadow-2xl flex flex-col justify-center items-center space-y-2.5 p-8  rounded-3xl  w-[340px]  border border-gray-200 drop-shadow-xl'
-                    key={index}
-                  >
-                    <h4 className='text-lg md:text-2xl font-semibold text-center'>
-                      {data.title}
-                    </h4>
-                    <ul className='flex-col '>
-                      {data.features.map((item, i) => {
-                        return (
-                          <li className='flex gap-2 items-start  ' key={i}>
-                            <Check
-                              className='text-blue-700/80'
-                              strokeWidth={4}
-                              size={50}
-                            />
-                            {item}
-                          </li>
-                        );
-                      })}
-                    </ul>
-
-                    <h4 className='text-lg md:text-2xl font-semibold'>
-                      {data.price}
-                    </h4>
-                    <Button className='bg-gradient-to-b from-[#583f80] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
-                      Check Eligibility for Free{' '}
-                      <span>
-                        {' '}
-                        <ArrowRight className='bg-white text-blue-700 rounded-full' />
-                      </span>
-                    </Button>
-                    <p className=' text-sm font-semibold text-neutral-500'>
-                      No payment required
-                    </p>
-                  </div>
-                );
-              })}
+            <div
+              className={`mt-8 gap-10 px-4 ${
+                cardData.length < 3
+                  ? 'flex justify-center flex-wrap'
+                  : 'grid md:grid-cols-3'
+              }`}
+            >
+              {cardData.map((data, index) => (
+                <div
+                  className='bg-white shadow-2xl flex flex-col justify-center items-center space-y-2.5 p-8 rounded-3xl w-[340px] border border-gray-200 drop-shadow-xl'
+                  key={index}
+                >
+                  <h4 className='text-lg md:text-2xl font-semibold text-center'>
+                    {data.title}
+                  </h4>
+                  <ul className='flex-col'>
+                    {data.features.map((item, i) => (
+                      <li className='flex gap-2 items-start' key={i}>
+                        <Check
+                          className='text-blue-700/80'
+                          strokeWidth={4}
+                          size={50}
+                        />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <h4 className='text-lg md:text-2xl font-semibold'>
+                    {data.price}
+                  </h4>
+                  <Button className='bg-gradient-to-b from-[#583f80] to-[#59f] md:px-5 md:py-6 rounded-4xl mt-4'>
+                    Check Eligibility for Free{' '}
+                    <span>
+                      <ArrowRight className='bg-white text-blue-700 rounded-full' />
+                    </span>
+                  </Button>
+                  <p className='text-sm font-semibold text-neutral-500'>
+                    No payment required
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
