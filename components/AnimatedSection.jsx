@@ -66,12 +66,12 @@ export default function AnimatedSection({
       <h4 className='text-blue-600 text-lg font-medium'>{title}</h4>
       <h2 className='text-4xl font-bold text-zinc-800 leading-8'>{headline}</h2>
       <p className='text-zinc-600 text-base md:text-lg'>{description}</p>
-      <p className='text-base text-zinc-700'>
+      {/* <p className='text-base text-zinc-700'>
         <span className='text-blue-700 font-medium'>
           Check out our PR services <MoveRight className='inline ml-1' />
         </span>{' '}
         {highlights && <span className='text-blue-500'>{highlights}</span>}
-      </p>
+      </p> */}
     </div>
   );
 
