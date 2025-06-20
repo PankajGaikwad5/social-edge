@@ -15,6 +15,7 @@ import {
   tiktokData,
   twitterData,
 } from '@/components/cardData';
+import { faq } from '@/components/faq';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
@@ -284,7 +285,7 @@ function page({ params }) {
               </Link>
             </div>
             <div className=''>
-              <AccordionSection />
+              <AccordionSection faq={faq} />
             </div>
           </div>
         </div>

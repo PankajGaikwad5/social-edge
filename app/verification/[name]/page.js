@@ -12,9 +12,11 @@ import AccordionSection from '@/components/Accordion';
 import {
   fbData,
   InstaData,
+  InstaverData,
   tiktokData,
   twitterData,
 } from '@/components/cardData';
+import { faq, faq2insta } from '@/components/faq';
 
 const poppins = Poppins({
   variable: '--font-geist-sans',
@@ -28,26 +30,32 @@ function page({ params }) {
   const [hoverImg, setHoverImg] = useState('/username.png');
   const [heroImage, setHeroImage] = useState('/username/insta.png');
   const [cardData, setCardData] = useState(InstaData);
+  const [faqs, setFaqs] = useState(faq2insta);
 
   useEffect(() => {
     if (name === 'Instagram') {
-      setHeroImage('/username/insta.png');
-      setHoverImg('/username.png');
-      setCardData(InstaData);
+      setHeroImage('/verifications/insta.png');
+      setHoverImg('/verifications/insta2.png');
+      setCardData(InstaverData);
     }
     if (name === 'Facebook') {
-      setHeroImage('/username/fb.png');
-      setHoverImg('/fb.png');
+      setHeroImage('/verifications/fb.png');
+      setHoverImg('/verifications/fb2.png');
       setCardData(fbData);
     }
     if (name === 'Twitter') {
-      setHeroImage('/username/tw.png');
-      setHoverImg('/tw.png');
+      setHeroImage('/verifications/tw.png');
+      setHoverImg('/verifications/tw2.png');
       setCardData(twitterData);
     }
     if (name === 'TikTok') {
-      setHeroImage('/username/tt.png');
-      setHoverImg('/tt.png');
+      setHeroImage('/verifications/tt.png');
+      setHoverImg('/verifications/tw2.png');
+      setCardData(tiktokData);
+    }
+    if (name === 'Youtube') {
+      setHeroImage('/verifications/yt.png');
+      setHoverImg('/verifications/yt2.png');
       setCardData(tiktokData);
     }
   }, []);
@@ -79,17 +87,14 @@ function page({ params }) {
                 {name} Verification Service
               </h1>
               <p className='md:text-xl leading-6 text-black'>
-                Join the class of the elite with our guranteed {name}
+                Join the class of the elite with our guranteed {name}{' '}
                 verification service!
                 {/* <br />
                 We Can Help! */}
               </p>
             </div>
             <div className='max-w-md'>
-              <img
-                src='https://maximaticmedia.com/wp-content/uploads/2022/11/username-claim-insta.png'
-                alt=''
-              />
+              <img src={heroImage} alt='' />
             </div>
           </div>
         </div>
@@ -130,7 +135,8 @@ function page({ params }) {
               How it Works
             </h3>
             <p className='text-zinc-700 font-medium tracking-wide'>
-              Our process behind claiming {name} Usernames is simple and easy!
+              The process behind our {name} verification service is simple and
+              easy!
             </p>
           </div>
 
@@ -147,7 +153,7 @@ function page({ params }) {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Pre Qualification
                 </h4>
-                <p className='text-zinc-600 font-medium leading-6'>{`The username in question must be atleast six 6 characters long and not be a highly searched-for term. It must also not be generic i.e. "Money" or "Damiel"`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`Our ${name} verification service is largely dependant on your existing media presence as well whether you’re already verified on other platforms. Don’t meet the media presence requirements? Allow us to help!`}</p>
               </div>
             </div>
             <div className='flex flex-col space-y-5'>
@@ -162,7 +168,7 @@ function page({ params }) {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Submission
                 </h4>
-                <p className='text-zinc-600 font-medium leading-6'>{`If we've agreed to take on your case, we will submit a request for the username claim directly to our Media Partner representative at Meta and await their approval`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`Upon ensuring that you meet the notability criteria, we will compile a document consisting of links to your media coverage and search engine presence. That document will then be submitted to our dedicated ${name} Media Partner representative for the official review.`}</p>
               </div>
             </div>
             <div className='flex flex-col space-y-5'>
@@ -177,7 +183,7 @@ function page({ params }) {
                 <h4 className='text-lg md:text-[1.5rem] font-semibold text-black/80'>
                   Result
                 </h4>
-                <p className='text-zinc-600 font-medium leading-6'>{`Following our submission, our internal ${name} rep will swap your current username with the handle you're seeking to claim and voila - say hello to your new username!`}</p>
+                <p className='text-zinc-600 font-medium leading-6'>{`Upon submitting your case to our dedicated rep,  we will have the answer within just three business days! As per our ${name} verification service statement, you are guaranteed a verification or a full refund, no if’s, and’s or but’s!.`}</p>
               </div>
             </div>
           </div>
@@ -193,8 +199,8 @@ function page({ params }) {
                 PRICING
               </h4>
               <p className='text-zinc-600/90 font-semibold tracking-wide'>
-                Our {name} username claim services are backed by a 100% refund
-                gurantee in the event of failure.
+                Our {name} Verification Service is backed by a 100% refund
+                guarantee in the event of failure!
               </p>
             </div>
             {/* cards */}
@@ -288,7 +294,7 @@ function page({ params }) {
               </Link>
             </div>
             <div className=''>
-              <AccordionSection />
+              <AccordionSection faq={faqs} />
             </div>
           </div>
         </div>

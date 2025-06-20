@@ -100,3 +100,37 @@ export const tiktokData = [
     price: 'Starting at $8,999',
   },
 ];
+
+// verifications
+export const InstaverData = [
+  {
+    title: 'Artist | Athelete',
+    features: [
+      'Guranteed Instagram verification service for artists and atheletes',
+      'Must have atleast 7 full feature articles on notable publications',
+      'PR + Verification bundle available for these categories',
+      'Delivered within 3 - 7 business days',
+    ],
+    price: '$5,199',
+  },
+  {
+    title: 'Public Figure | Influencer',
+    features: [
+      'Guaranteed IG verification service for actors, TV hosts, radio personalities, etc',
+      'Must have atleast 12 full feature articles on notable publications',
+      'Google Knowledge Panel and Wiki Page Preferred',
+      'Delivered within 5 - 14 business days',
+    ],
+    price: '$9,299',
+  },
+  {
+    title: 'Brand | Entrepreneur',
+    features: [
+      'Guranteed IG verification service for brands and entrepreneurs',
+      'Must have at least 15 full feature articles on notable publications',
+      'Must have Google Knowledge Panel and Wiki Page',
+      'Delivered within 5 – 21 business days',
+    ],
+    price: 'Starting at $14,999',
+  },
+];
