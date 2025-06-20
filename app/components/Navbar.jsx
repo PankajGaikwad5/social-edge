@@ -34,11 +34,17 @@ const menuData = [
   {
     title: 'Social Media Verification',
     links: [
-      { label: 'Instagram Verification Service', href: '#' },
-      { label: 'Facebook Verification Service', href: '#' },
-      { label: 'Twitter Verification Service', href: '#' },
-      { label: 'TikTok Verification Service', href: '#' },
-      { label: 'YouTube Verification Service', href: '#' },
+      {
+        label: 'Instagram Verification Service',
+        href: '/verification/Instagram',
+      },
+      {
+        label: 'Facebook Verification Service',
+        href: '/verification/Facebook',
+      },
+      { label: 'Twitter Verification Service', href: '/verification/Twitter' },
+      { label: 'TikTok Verification Service', href: '/verification/TikTok' },
+      { label: 'YouTube Verification Service', href: '/verification/Youtube' },
     ],
   },
   {

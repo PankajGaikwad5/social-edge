@@ -31,22 +31,22 @@ function page({ params }) {
 
   useEffect(() => {
     if (name === 'Instagram') {
-      setHeroImage('/usernames/insta.png');
+      setHeroImage('/username/insta.png');
       setHoverImg('/username.png');
       setCardData(InstaData);
     }
     if (name === 'Facebook') {
-      setHeroImage('/usernames/fb.png');
+      setHeroImage('/username/fb.png');
       setHoverImg('/fb.png');
       setCardData(fbData);
     }
     if (name === 'Twitter') {
-      setHeroImage('/usernames/tw.png');
+      setHeroImage('/username/tw.png');
       setHoverImg('/tw.png');
       setCardData(twitterData);
     }
     if (name === 'TikTok') {
-      setHeroImage('/usernames/tt.png');
+      setHeroImage('/username/tt.png');
       setHoverImg('/tt.png');
       setCardData(tiktokData);
     }
@@ -76,16 +76,20 @@ function page({ params }) {
           <div className='w-full flex flex-col md:flex-row max-w-[59rem] items-center'>
             <div className='flex flex-col space-y-3 text-black/80'>
               <h1 className='text-lg font-semibold md:text-5xl'>
-                {name} Username Claim Service
+                {name} Verification Service
               </h1>
               <p className='md:text-xl leading-6 text-black'>
-                Is someone squatting on your perfect username?
-                <br />
-                We Can Help!
+                Join the class of the elite with our guranteed {name}
+                verification service!
+                {/* <br />
+                We Can Help! */}
               </p>
             </div>
             <div className='max-w-md'>
-              <img src={heroImage} alt='' />
+              <img
+                src='https://maximaticmedia.com/wp-content/uploads/2022/11/username-claim-insta.png'
+                alt=''
+              />
             </div>
           </div>
         </div>
