@@ -287,7 +287,7 @@ function page({ params }) {
           </div>
         </div>
 
-        <div className='relative  w-full h-[270px] max-w-5xl overflow-hidden rounded-xl mb-20 bg-[#f7f7f7]'>
+        <div className='relative  w-full h-[270px] max-w-5xl overflow-hidden rounded-xl my-20 bg-[#f7f7f7]'>
           {/* Background Image */}
           <div className='absolute inset-0 z-0 '>
             <img
