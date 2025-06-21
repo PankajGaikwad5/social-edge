@@ -24,7 +24,7 @@ const poppins = Poppins({
   subsets: ['latin'],
 });
 
-function page({ params }) {
+function Page({ params }) {
   const { name } = React.use(params);
 
   const [hoverImg, setHoverImg] = useState('/username.png');

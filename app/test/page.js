@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import React from 'react';
 
-function page() {
+function Page() {
   return (
     <div>
       <Button>testttt</Button>

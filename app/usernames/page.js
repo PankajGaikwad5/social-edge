@@ -16,7 +16,7 @@ const poppins = Poppins({
   subsets: ['latin'],
 });
 
-function page() {
+function Page() {
   const results = [
     {
       title: 'Entirely Risk-Free.',
