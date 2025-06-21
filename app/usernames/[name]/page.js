@@ -319,4 +319,4 @@ function Page({ params }) {
   );
 }
 
-export default page;
+export default Page;
